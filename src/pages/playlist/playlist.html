@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{playlistNome}}</ion-title>
+
+
+  </ion-navbar>
+</ion-header>
+
+
+
+
+<ion-content>
+
+
+
+  <!--<div text-center>
+
+    <p texct-center  (click)="addPlaylist()"><ion-icon name="add-circle"></ion-icon> Adicionar música nesta playlist</p>
+  </div>-->
+
+
+ <ion-list>
+ <ion-item-sliding #item  *ngFor="let musica of musicas | async; let i=index;">
+    <ion-item (click)="play( musica )" >
+
+      <ion-row>
+        <ion-col>
+          
+            <!--<ion-thumbnail margin-right  float-left>
+              <img width="80" src="assets/imgs/noMusic.png" />
+              </ion-thumbnail>-->
+
+           <h2>{{i+1}}. {{musica.post_name}}</h2>
+           <p>{{musica.post_artista}}</p>
+
+
+          </ion-col>
+        </ion-row>
+
+    </ion-item>
+
+
+      <ion-item-options side="right">
+
+        <button color="danger" ion-button outline (click)="deletar(musica.post_uid)"><ion-icon  name="trash"></ion-icon>Remover</button>
+
+    </ion-item-options>
+
+    </ion-item-sliding>
+
+  </ion-list>
+
+
+
+
+</ion-content>

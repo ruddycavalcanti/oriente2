@@ -1,0 +1,59 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.brimagem.oriente"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.brimagem.oriente"
+    },
+    "cordova-plugin-facebook4": {
+      "APP_ID": "181796169109752",
+      "APP_NAME": "ionicStarter",
+      "PACKAGE_NAME": "com.brimagem.oriente"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.brimagem.oriente"
+    },
+    "cordova-plugin-googleplus": {
+      "REVERSED_CLIENT_ID": "com.googleusercontent.apps.744697904939-v6uc4etme3lem9ki6rat1lfn8bll1952",
+      "PACKAGE_NAME": "com.brimagem.oriente"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.brimagem.oriente"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.brimagem.oriente"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.brimagem.oriente"
+    },
+    "cordova-plugin-media": {
+      "KEEP_AVAUDIOSESSION_ALWAYS_ACTIVE": "NO",
+      "PACKAGE_NAME": "com.brimagem.oriente"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.brimagem.oriente"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.brimagem.oriente"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "com.brimagem.oriente"
+    },
+    "cordova-plugin-youtube-video-player": {
+      "PACKAGE_NAME": "com.brimagem.oriente"
+    }
+  },
+  "dependent_plugins": {
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.brimagem.oriente"
+    }
+  }
+}

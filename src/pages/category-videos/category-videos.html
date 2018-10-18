@@ -1,0 +1,103 @@
+<ion-header>
+    <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{titulo}}</ion-title>
+
+    <ion-buttons end margin-right >
+        <button ion-button  icon-only (tap)="irParaAdd()" *ngIf="is_admin" >
+         <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="category">
+  
+    <ion-list>
+        <ion-item   text-wrap   *ngFor="let post of posts  | async" (click)="irParaSingle($event, post)">
+                
+            <ion-row>
+              <ion-col col-3>
+                  <ion-thumbnail item-start>
+                      <img src="{{post.post_image}}" width="70">
+                    </ion-thumbnail>
+    
+                </ion-col>
+
+
+                <ion-col col-7>
+                    <h2>{{post.post_name}}</h2>
+
+                    <p>{{post.post_description}}</p>
+        
+      
+                  </ion-col>
+
+
+                  <ion-col col-2>
+                      <p margin-top class="cat_seta">
+                          <ion-icon color="primary" ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
+                      </p>
+        
+                    </ion-col>
+
+          </ion-row>
+
+      
+      </ion-item>
+
+      
+     
+      </ion-list>
+
+ 
+
+
+
+
+      <h4 padding margin-top *ngIf="tituloPlaylist" >PLAYLISTS</h4>
+
+      <!-- Youtube Videos -->
+
+      <ion-list>
+            <ion-item   text-wrap   *ngFor="let playlist of playlists  | async" (click)="irParaVideo($event, playlist, playlist.id)">
+                    
+                <ion-row *ngIf="playlist.status.privacyStatus!='private'">
+                  <ion-col col-3>
+                      <ion-thumbnail item-start *ngIf="playlist.snippet.thumbnails.default.url">
+                            <img [src]="playlist.snippet.thumbnails.default.url" width="70">
+                        </ion-thumbnail>
+            
+        
+                    </ion-col>
+    
+    
+    
+                    <ion-col col-7>
+                        <h2>{{playlist.snippet.title}}</h2>
+    
+                        <p class="descCategory">{{playlist.snippet.description}}</p>
+          
+                      </ion-col>
+    
+    
+                      <ion-col col-2>
+                          <p margin-top class="cat_seta">
+                              <ion-icon color="primary" ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
+                          </p>
+            
+                        </ion-col>
+    
+              </ion-row>
+    
+          
+          </ion-item>
+    
+          
+         
+          </ion-list>
+    
+
+</ion-content>

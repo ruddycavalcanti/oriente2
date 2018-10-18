@@ -1,0 +1,82 @@
+<ion-header>
+    <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Player</ion-title>
+
+    <ion-buttons end margin-right >
+        <button ion-button  icon-only >
+        <!--<ion-icon name="add"></ion-icon>-->
+        </button>
+        </ion-buttons>
+
+
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content class="player">
+
+	<div class="content">
+
+	    <ion-thumbnail margin-top class="thumb">
+	        <img width="200" src="{{imagemAlbum}}" />
+	    </ion-thumbnail>
+
+
+    </div>
+
+	<ion-footer padding>
+
+			<p>{{musica_nome}} <span *ngIf="musica_artista">- {{musica_artista}}</span></p>
+
+
+			<div class="tempo" *ngIf="mediaTimer!='0'">
+				<span float-left>{{mediaTimer}}</span>
+
+				<span float-right>{{duracao}}</span>
+			  </div>
+		
+	
+			  <div  class="tempoDrag" margin-top margin-bottom>
+			  <ion-range [(ngModel)]="mediaTimer">  </ion-range>
+			</div>
+		
+			  
+  
+			<ion-grid>
+				<ion-row>
+				  <ion-col>
+				 <ion-icon  *ngIf="botaoRefresh"  margin-right  name='refresh' (click)="refresh()"></ion-icon>
+		
+					   <ion-icon margin-right *ngIf="botaoRepeat"  name='repeat' (click)="repeat()"></ion-icon>
+		
+									<ion-icon  *ngIf="botaoShuffle"  margin-right  name='shuffle' (click)="shuffle()"></ion-icon>
+				   </ion-col>
+		
+				  <ion-col>
+							<ion-icon margin-right name='ios-skip-backward' (click)="anterior()"></ion-icon>
+				  </ion-col>
+		
+				  <ion-col>
+				  	<ion-icon *ngIf="botaoPause" margin-right name='pause' (click)="pausarMusica()"></ion-icon>
+		
+							<ion-icon *ngIf="botaoPlay"  margin-right name='play' (click)="tocarMusica()"></ion-icon>
+				  </ion-col>
+		
+				  <ion-col>
+							<ion-icon margin-right name='ios-skip-forward' (click)="proximo()"></ion-icon>
+				  </ion-col>
+		
+				  <ion-col>
+							<ion-icon   name='share' (click)="share()"></ion-icon>
+				  </ion-col>
+		
+				</ion-row>
+			  </ion-grid>
+		  
+  
+		</ion-footer> 
+</ion-content>

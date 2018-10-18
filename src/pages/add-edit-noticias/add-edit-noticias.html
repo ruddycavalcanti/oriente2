@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{title}} {{post_name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  text-center>
+
+    <div margin-top text-center class="profile-image-wrapper page" (click)="addPhoto()">
+
+       
+       <p>
+          <img src="{{post_image}}"  width="114" >
+        </p>
+ 
+    <button ion-button small  round outline>Escolher Foto</button>
+
+      <input type="file" #fileInput style="visibility: hidden; height: 0px" name="files[]" (change)="processWebImage($event)" />
+
+    </div>
+
+
+        
+  <form #f="ngForm" (ngSubmit)="salvarEdit(f)">
+
+  <ion-list>
+
+      <ion-item>
+          <ion-label floating>Título da Notícia</ion-label>
+          <ion-input name="post_name"  ngModel  required type="text" value="{{post_name}}"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+            <ion-label floating>Descrição</ion-label>
+            <ion-input name="post_description"  ngModel  required type="text" value="{{post_description}}"></ion-input>
+          </ion-item>
+      
+
+
+              <ion-item>
+                  <ion-label floating>Conteúdo</ion-label>
+                  <ion-textarea  name="post_content"  ngModel  type="email" [value]="post_content"></ion-textarea>
+                </ion-item>
+          
+            
+  
+            <div margin-top padding-top>
+                <button ion-button full  round [disabled]="!f.valid" color="dark">{{title}}</button>
+              </div>
+
+       
+
+  </ion-list >
+
+</form>
+
+
+<br><br>
+
+
+<div  margin>
+    <p (click)="apagar()"  *ngIf="is_edit"  float-right margin-top>
+       <ion-icon name="close"></ion-icon> Remover Notícia
+   </p>
+ </div>
+
+ 
+</ion-content>

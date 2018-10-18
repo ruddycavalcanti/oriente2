@@ -1,0 +1,8 @@
+{
+  "name": "OrienteApp",
+  "app_id": "da2eba31",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

@@ -1,0 +1,80 @@
+<ion-header>
+    <ion-navbar color="dark">
+
+    <ion-title>{{title}} {{post_name}}</ion-title>
+
+
+  <ion-buttons end margin-right>
+      <button ion-button  icon-only (click)="dismiss()">
+      <ion-icon name="close"></ion-icon>
+      </button>
+      </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding text-center>
+
+ 
+    <div margin-top text-center class="profile-image-wrapper page" (click)="addPhoto()">
+
+       
+        <p>
+           <img src="{{post_image}}"  width="114" >
+         </p>
+  
+     <button ion-button small  round outline>Escolher Foto</button>
+ 
+       <input type="file" #fileInput style="visibility: hidden; height: 0px" name="files[]" (change)="processWebImage($event)" />
+ 
+     </div>
+
+     
+        
+  <form #f="ngForm" (ngSubmit)="salvarEdit(f)">
+
+  <ion-list>
+
+      <ion-item>
+          <ion-label floating>Nome da Música</ion-label>
+          <ion-input name="post_name"  ngModel  required type="text" value="{{post_name}}"></ion-input>
+        </ion-item>
+    
+      
+          
+          <ion-item>
+              <ion-label floating>URL da Música</ion-label>
+              <ion-input  name="musica_url" required   ngModel  type="text" [value]="musica_url"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>Nome do Artista</ion-label>
+                <ion-input  name="post_artista"    ngModel  type="text" [value]="post_artista"></ion-input>
+              </ion-item>
+
+       
+          
+            
+  
+            <div margin-top padding-top>
+                <button ion-button full round  [disabled]="!f.valid"  color="dark">{{title}}</button>
+              </div>
+
+       
+
+  </ion-list >
+
+</form>
+
+
+<br><br>
+
+
+<div  margin>
+    <p (click)="apagar()"  *ngIf="is_edit"  float-right margin-top>
+       <ion-icon name="close"></ion-icon> Remover Música
+   </p>
+ </div>
+
+ 
+</ion-content>

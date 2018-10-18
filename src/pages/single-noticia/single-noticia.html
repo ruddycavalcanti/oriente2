@@ -1,0 +1,85 @@
+<ion-header>
+    <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{post_name}}</ion-title>
+
+   <ion-buttons end  *ngIf="is_admin"   margin-right>
+    <button ion-button margin-right  icon-only (click)="irParaEdit()">
+    <ion-icon name="create"></ion-icon>
+    </button>
+
+    <button ion-button  icon-only (click)="share()">
+        <ion-icon name="share"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+
+
+
+    <ion-row>
+
+            <ion-col  no-padding>
+        
+                <img src="{{post_image}}" class="destaqueImg" width="100%" >
+             
+                
+                <div padding>
+
+                    <h1 class="nome">{{post_name}}</h1>
+                    
+                    <!--<ion-row>
+                            <ion-col>
+                            <button ion-button icon-left clear small>
+                                <ion-icon name="thumbs-up"></ion-icon>
+                                <div>12 Likes</div>
+                            </button>
+                            </ion-col>
+                            <ion-col>
+                            <button ion-button icon-left clear small>
+                                <ion-icon name="text"></ion-icon>
+                                <div>4 Comments</div>
+                            </button>
+                            </ion-col>
+                            <ion-col center text-center>
+                            <ion-note>
+                                11h ago
+                            </ion-note>
+                            </ion-col>
+                        </ion-row> -->
+                
+                    
+                    <p class="date">{{post_date}}</p> 
+
+                    <p class="desc">{{post_description}}</p> 
+
+                
+
+                </div>
+             
+        
+            </ion-col>
+
+ 
+        
+    </ion-row>
+
+    
+
+
+    <ion-row padding-right padding-left>
+
+        <ion-col>
+            <p>{{post_content}}</p>
+
+        </ion-col>
+  </ion-row>
+ 
+        
+
+
+</ion-content>

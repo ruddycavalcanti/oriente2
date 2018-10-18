@@ -1,0 +1,136 @@
+<ion-header>
+    <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{title}} {{post_name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding text-center class="addEdit">
+
+  
+
+        
+  <form #f="ngForm" (ngSubmit)="salvarEdit(f)">
+
+  <ion-list>
+
+      <ion-item>
+          <ion-label floating>Nome do Show</ion-label>
+          <ion-input name="post_name"  ngModel  required type="text" value="{{post_name}}"></ion-input>
+        </ion-item>
+    
+      
+          
+         
+        <ion-item>
+                <ion-label floating>Local</ion-label>
+                <ion-input  name="post_local"  ngModel  type="email" [value]="post_local"></ion-input>
+            </ion-item>
+                
+
+              <ion-row>
+                <ion-col>
+                    <ion-item no-lines>
+                        <ion-label floating>Cidade</ion-label>
+                        <ion-input  name="post_cidade"  ngModel  type="email" [value]="post_cidade"></ion-input>
+            
+                        </ion-item>
+                </ion-col>
+                <ion-col>
+                    <ion-item>
+                        <ion-label floating>Estado</ion-label>
+                        <ion-select [(ngModel)]="post_estado" name="post_estado">
+
+                                <ion-option value=""></ion-option>
+                            <ion-option value="AC">Acre</ion-option>
+                            <ion-option value="AL">Alagoas</ion-option>
+                            <ion-option value="AP">Amapá</ion-option>
+                            <ion-option value="AM">Amazonas</ion-option>
+                            <ion-option value="BA">Bahia</ion-option>
+                            <ion-option value="CE">Ceará</ion-option>
+                            <ion-option value="DF">Distrito Federal</ion-option>
+                            <ion-option value="ES">Espírito Santo</ion-option>
+                            <ion-option value="GO">Goiás</ion-option>
+                            <ion-option value="MA">Maranhão</ion-option>
+                            <ion-option value="MT">Mato Grosso</ion-option>
+                            <ion-option value="MS">Mato Grosso do Sul</ion-option>
+                            <ion-option value="MG">Minas Gerais</ion-option>
+                            <ion-option value="PA">Pará</ion-option>
+                            <ion-option value="PB">Paraíba</ion-option>
+                            <ion-option value="PR">Paraná</ion-option>
+                            <ion-option value="PE">Pernambuco</ion-option>
+                            <ion-option value="PI">Piauí</ion-option>
+                            <ion-option value="RJ">Rio de Janeiro</ion-option>
+                            <ion-option value="RN">Rio Grande do Norte</ion-option>
+                            <ion-option value="RS">Rio Grande do Sul</ion-option>
+                            <ion-option value="RO">Rondônia</ion-option>
+                            <ion-option value="RR">Roraima</ion-option>
+                            <ion-option value="SC">Santa Catarina</ion-option>
+                            <ion-option value="SP">São Paulo</ion-option>
+                            <ion-option value="SE">Sergipe</ion-option>
+                            <ion-option value="TO">Tocantins</ion-option>
+                        </ion-select>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+
+
+              <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-label floating>Dia</ion-label>
+                        <ion-datetime min="2018" required   displayFormat="DD-MM-YYYY" [(ngModel)]="post_dia" name="post_dia"  ></ion-datetime>
+                       
+                      </ion-item>
+                </ion-col>
+                <ion-col>
+                    <ion-item>
+                        <ion-label floating>Horário</ion-label>
+                        <ion-datetime name="post_horario"   displayFormat="H:mm" [(ngModel)]="post_horario"></ion-datetime>
+                       
+                      </ion-item>
+                  </ion-col>
+              </ion-row>
+
+
+
+
+
+              <ion-item>
+                  <ion-label floating>Informações adicionais</ion-label>
+                  <ion-textarea  name="post_content"  ngModel  type="email" [value]="post_content"></ion-textarea>
+                </ion-item>
+
+
+
+                <ion-item>
+                        <ion-label floating>Link Ingresso</ion-label>
+                        <ion-input name="link_ingresso"  ngModel   type="text" value="{{link_ingresso}}"></ion-input>
+                      </ion-item>
+          
+            
+  
+            <div margin-top padding-top>
+                <button ion-button full  round [disabled]="!f.valid" color="dark">{{title}}</button>
+              </div>
+
+       
+
+  </ion-list >
+
+</form>
+
+
+<br><br>
+
+
+<div  margin>
+    <p (click)="apagar()"  *ngIf="is_edit"  float-right margin-top>
+       <ion-icon name="close"></ion-icon> Remover Show
+   </p>
+ </div>
+
+ 
+</ion-content>

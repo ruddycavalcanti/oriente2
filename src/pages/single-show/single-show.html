@@ -1,0 +1,85 @@
+<ion-header>
+    <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{post_name}}</ion-title>
+
+   <ion-buttons end   *ngIf="is_admin" margin-right>
+    <button ion-button  icon-only (click)="irParaEdit()">
+    <ion-icon name="create"></ion-icon>
+    </button>
+    </ion-buttons>
+    
+  </ion-navbar> 
+</ion-header>
+
+<ion-content class="show" margin-top>
+
+
+    
+
+        <ion-row>
+                <ion-col col-3 padding text-center >
+                    <p class="diaSingle">{{post_dia.substr(8,2) }}</p>
+                    <p class="mes">{{month}} </p>
+                    <p class="hora">{{post_horario.substr(0,6)}}h</p>
+                </ion-col>
+      
+                <ion-col col-9 class="maisDetalhes" padding>
+                    <h2 class="nomeEvento" margin-top padding-bottom margin-bottom class="primaryColor">{{post_name}} 
+                        <span  *ngIf="show.status=='cancelled'">
+                            (Cancelado)
+                        </span>    
+                    </h2>
+                    
+                    
+                    <ion-row >
+                        <ion-col no-padding col-2  >
+                                <p><img width="24" src="assets/imgs/hora.png" /> </p>
+                        </ion-col>
+                         <ion-col no-padding col-10 class="detalheSpace">
+                            <p>  {{post_dia.substr(8,2) }}/{{post_dia.substr(5,2) }}/{{post_dia.substr(0,4) }}  - {{post_horario.substr(0,6)}}h</p>
+                          
+                        </ion-col>
+                    </ion-row>
+      
+      
+                    <ion-row>
+                        <ion-col  no-padding  col-2   >
+                            <p><img width="24" src="assets/imgs/local.png" /> </p>
+                        </ion-col>
+                         <ion-col no-padding col-10 class="detalheSpace">
+                      <p>{{post_local}} - {{post_cidade}} <span *ngIf="post_estado!=''">/ {{post_estado}}</span> </p>
+                        </ion-col>
+                    </ion-row>
+
+
+                   
+
+                    <div margni-left margin-top *ngIf="post_content!=''" >
+                        <strong>Informações adicionais:</strong>
+                        <p>{{post_content}}</p>
+                    </div>
+
+                    <div margni-left margin-top *ngIf="link_ingresso!=''" >
+                            <strong>Link ngresso:</strong>
+                            <p><button ion-button (click)="openLink(link_ingresso)" >Comprar</button></p> 
+                    </div>
+
+                    <div  margin-top *ngIf="linkSongKick" >
+                           <span (click)="openLink(linkSongKick)" >
+                                <img float-right width="24" src="assets/imgs/songkick.png" width="100" />
+                           </span>
+                    </div>
+                    
+      
+                   
+                  </ion-col>
+              </ion-row>
+
+
+        
+
+
+</ion-content>

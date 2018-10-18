@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Usuários</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+<ion-list >
+
+
+ <ion-item-sliding #item text-wrap  *ngFor="let usuario of usuarios | async" >
+
+    <ion-item (click)="irParaPerfil($event, usuario)">
+  	<ion-row>
+
+      <ion-col col-3>
+        	<img float-left  margin-right  [src]="usuario.user_photoURL ? usuario.user_photoURL : 'assets/imgs/no_avatar.jpg'" width="60" height="60" class="circle" />
+      </ion-col>
+
+      <ion-col col-9>
+          <h2> {{usuario.user_displayName}}</h2>
+          <p>{{usuario.user_email}}</p>
+        <p> {{usuario.user_tipo}}</p>
+        </ion-col>
+    </ion-row>
+  </ion-item>
+  
+    <ion-item-options side="right">
+
+        <button color="danger" ion-button outline (click)="irParaEditarPerfil($event, usuario)"><ion-icon  name="create"></ion-icon>Editar</button>
+
+    </ion-item-options>
+
+
+    </ion-item-sliding>
+
+
+</ion-list>
+
+
+</ion-content>

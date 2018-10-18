@@ -1,0 +1,117 @@
+<ion-header>
+    <ion-navbar color="dark">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Configurações</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+  
+
+
+
+    <form #f="ngForm" (ngSubmit)="salvarEdit(f)">
+
+        <h4 padding>Redes Sociais </h4>
+        <ion-list>
+           
+     
+            <ion-item>
+                <ion-label floating>Youtube (apenas usuário)</ion-label>
+                <ion-input  name="youtube"    ngModel  type="text" [value]="youtubeUrl"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label floating>Instagram (apenas usuário)</ion-label>
+                  <ion-input  name="instagram"    ngModel  type="text" [value]="instagramUrl"></ion-input>
+                </ion-item>
+  
+       
+                <ion-item>
+                    <ion-label floating>Facebook (apenas usuário)</ion-label>
+                    <ion-input  name="facebook"    ngModel  type="text" [value]="facebookUrl"></ion-input>
+                  </ion-item>
+
+                  <ion-item>
+                      <ion-label floating>Spotify (apenas usuário)</ion-label>
+                      <ion-input  name="spotify"    ngModel  type="text" [value]="spotifyUrl"></ion-input>
+                    </ion-item>
+
+
+                    <ion-item>
+                        <ion-label floating>Website (URL completa)</ion-label>
+                        <ion-input  name="website"    ngModel  type="text" [value]="websiteUrl"></ion-input>
+                      </ion-item>
+    
+          
+                  <ion-item>
+                      <ion-label floating>Loja Virtual (URL Completa)</ion-label>
+                      <ion-input  name="lojavirtual"    ngModel  type="text" [value]="lojaVirtualUrl"></ion-input>
+                    </ion-item>
+  
+                    <ion-item>
+                        <ion-label floating>SongKick (apenas usuário)</ion-label>
+                        <ion-input  name="songkick"    ngModel  type="text" [value]="songkickId"></ion-input>
+                      </ion-item>
+
+
+                    <div margin-top>
+                        <button ion-button  full round  [disabled]="!f.valid"  color="dark">Salvar</button>
+                    </div>
+             </ion-list>
+
+
+
+             <!-- 
+          <button ion-button (click)="integrarInstagram()">Conectar-se ao Instagram</button>
+
+
+             
+                  <ion-grid>
+                        <ion-row class="galleryProfile">
+                        <ion-col col-3 *ngFor="let post of posts">
+                        
+                            <img src="{{post.images.thumbnail.url}}" width="80" height="80" >
+
+                        </ion-col>  
+                </ion-row>
+                </ion-grid>
+ -->
+
+
+
+            
+                <!--  </ion-list>
+
+            
+              <h4 padding>Cores</h4>
+              <ion-list>
+                 
+           
+                  <ion-item>
+                      <ion-label floating>Cor Primária (ex.: #000000)</ion-label>
+                      <ion-input  name="corPrimaria"    ngModel  type="text" [value]="corPrimaria"></ion-input>
+                    </ion-item>
+      
+                    <ion-item>
+                        <ion-label floating>Cor Secundária (ex.: #000000)</ion-label>
+                        <ion-input  name="corSecundaria"    ngModel  type="text" [value]="corSecundaria"></ion-input>
+                      </ion-item>
+      
+      
+                        <div margin-top>
+                          <button ion-button  full round  [disabled]="!f.valid"  color="dark">Salvar</button>
+                        </div>
+              
+                 
+                  
+                    </ion-list>
+                    -->
+             
+          </form> 
+
+
+  </ion-content>
+  

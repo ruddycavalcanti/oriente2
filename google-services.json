@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "1085462696311",
+    "firebase_url": "https://brartist-c47d3.firebaseio.com",
+    "project_id": "brartist-c47d3",
+    "storage_bucket": "brartist-c47d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085462696311:android:414bab5144268abd",
+        "android_client_info": {
+          "package_name": "com.brimagem.oriente"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1085462696311-vmi89o25olbr2rgsghjcr8j3hl1v8876.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.brimagem.oriente",
+            "certificate_hash": "1beca1814b3cf9bc76d35e4e842c7b482b055366"
+          }
+        },
+        {
+          "client_id": "1085462696311-ulv6j3turbs99mlrfhvkrpq7qv4s814o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.brimagem.oriente",
+            "certificate_hash": "870349b5958c6a0cc85b8c86fb29e5752eea3ca4"
+          }
+        },
+        {
+          "client_id": "1085462696311-2imb89i4t6bu5g14rntl5vnloo6frbl0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsWUn5VnICjIlTvaBUC7qAUXTUf94EoSA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1085462696311-2imb89i4t6bu5g14rntl5vnloo6frbl0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

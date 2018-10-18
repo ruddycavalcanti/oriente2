@@ -1,0 +1,148 @@
+<ion-header>
+    <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Agenda de Shows</ion-title>
+
+    <ion-buttons end margin-right >
+    <button ion-button  icon-only (tap)="irParaAdd()" *ngIf="is_admin" >
+    <ion-icon name="add"></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="show">
+
+
+
+  <ion-list >
+
+      <ion-item   text-wrap   *ngFor="let post of posts  | async" (click)="irParaSingle($event, post)">
+  
+        <ion-row>
+          <ion-col col-3 padding text-center margin-top>
+              <p class="dia">{{ post.post_dia.substr(8,2) }} </p>
+              <p class="mes">{{getMonthName(post.post_dia.substr(5,2))}}</p>
+              <p class="hora"><span *ngIf="post.post_horario" >{{post.post_horario}}h</span></p>
+          </ion-col>
+
+          <ion-col col-9 class="maisDetalhes" padding>
+              <h2 class="nomeEvento" margin-top margin-bottom class="primaryColor"> {{post.post_name}} </h2>
+              
+              
+              <ion-row>
+                <ion-col col-10>
+                    <ion-row >
+                        <ion-col no-padding col-2 class="data" margin-bottom>
+                            <img width="28" src="assets/imgs/hora.png" /> 
+                        </ion-col>
+                         <ion-col  col-10 class="detalheSpace">
+                            <span>  {{post.post_dia.substr(8,2) }}/{{post.post_dia.substr(5,2) }}/{{post.post_dia.substr(0,4) }}  <span *ngIf="post.post_horario" >- {{post.post_horario}}h</span></span>
+                        </ion-col>
+                    </ion-row>
+      
+                    <ion-row>
+                        <ion-col  no-padding  col-2  class="data" margin-bottom>
+                            <img width="28" src="assets/imgs/local.png" /> 
+                        </ion-col>
+                         <ion-col  col-10 class="detalheSpace">
+                      <span>{{post.post_cidade}} / {{post.post_estado}}</span>
+                        </ion-col>
+                    </ion-row>
+
+                  </ion-col>
+
+                  <ion-col col-2>
+                      <p margin-top class="cat_seta">
+                          <ion-icon color="primary" ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
+                      </p>
+        
+                    </ion-col>
+              </ion-row>
+              
+              
+          
+
+            
+
+             
+            </ion-col>
+        </ion-row>
+      
+      </ion-item>
+  
+  
+    </ion-list>
+
+
+
+  <ion-list >
+
+    <ion-item   text-wrap   *ngFor="let show of shows | async; let i = index;" (click)="irParaSingleSongKick($event, show)">
+
+      <ion-row >
+        <ion-col col-3 padding text-center margin-top>
+                <p class="dia">{{ show.start.date.substr(8,2) }} </p>
+                <p class="mes">{{getMonthName(show.start.date.substr(5,2))}}</p>
+              <p class="hora"><span *ngIf="show.start.time" >{{show.start.time.substr(0,6)}}h</span></p>
+        </ion-col>
+
+        <ion-col col-9 class="maisDetalhes" padding>
+            <h2 class="nomeEvento" margin-top margin-bottom class="primaryColor">
+                    {{show.performance[0].artist.displayName}} -  {{show.venue.metroArea.displayName}}
+
+                    <span *ngIf="show.status=='cancelled'"> (Cancelado)</span>
+              </h2>
+            
+            
+            <ion-row>
+              <ion-col col-10>
+                  <ion-row >
+                      <ion-col no-padding col-2 class="data" margin-bottom>
+                          <img width="28" src="assets/imgs/hora.png" /> 
+                      </ion-col>
+                       <ion-col  col-10 class="detalheSpace">
+                        
+                        <span> {{show.start.date.substr(8,2) }}/{{show.start.date.substr(5,2) }}/{{show.start.date.substr(0,4) }}
+                              <span *ngIf="show.start.time">- {{show.start.time.substr(0,6)}}h</span>
+                        </span>
+                      
+                      </ion-col>
+                  </ion-row>
+    
+                  <ion-row>
+                      <ion-col  no-padding  col-2  class="data" margin-bottom>
+                          <img width="28" src="assets/imgs/local.png" /> 
+                      </ion-col>
+                       <ion-col  col-10 class="detalheSpace">
+                        <span>{{show.venue.displayName}}  - {{show.venue.metroArea.displayName}} </span>
+                      </ion-col>
+                  </ion-row>
+
+                </ion-col>
+
+                <ion-col col-2>
+                    <p margin-top class="cat_seta">
+                        <ion-icon color="primary" ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
+                    </p>
+      
+                  </ion-col>
+            </ion-row>
+            
+            
+        
+
+          
+
+           
+          </ion-col>
+      </ion-row>
+    
+    </ion-item>
+
+
+  </ion-list>
+
+</ion-content>

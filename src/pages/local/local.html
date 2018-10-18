@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Minhas Músicas</ion-title>
+
+    <ion-buttons end margin-right >
+        <button ion-button  icon-only >
+        <!--<ion-icon name="add"></ion-icon>-->
+        </button>
+        </ion-buttons>
+
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content >
+
+
+ 
+  <ion-list>
+    <ion-item *ngFor="let post of posts; let i=index;" >
+
+      <ion-row>
+
+        <ion-col col-10 (click)="play(post)">
+            <!-- <ion-thumbnail margin-right  float-left >
+                 <img width="80" src="assets/imgs/noMusic.png" />
+             </ion-thumbnail>-->
+
+             <h2>{{i+1}}. {{post.post_name}} </h2>
+             <p>{{post.post_artista}}</p>
+
+         </ion-col>
+
+
+        
+        <ion-col col-2 (click)="abreAddMusicToPlaylist(post)">
+            <button color="dark" ion-button icon-only  item-end>
+                <ion-icon name="add-circle"></ion-icon>
+              </button>
+        </ion-col>
+
+
+    </ion-row>
+
+
+    </ion-item>
+  </ion-list>
+  
+</ion-content>

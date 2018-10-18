@@ -1,0 +1,67 @@
+<ion-header>
+    <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Minhas Playlists</ion-title>
+
+    <ion-buttons end margin-right >
+        <button ion-button  icon-only (click)="addPlaylist()">
+        <ion-icon name="add"></ion-icon>
+        </button>
+        </ion-buttons>
+
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="cat_playlists">
+
+
+<!--
+  <div text-center margin-top>
+
+    <p (click)="addPlaylist()"><ion-icon name="add-circle"></ion-icon>Criar nova playlist</p>
+  </div>
+-->
+
+ <ion-list>
+    <ion-item *ngFor="let playlist of playlists | async">
+
+
+
+    <ion-row>
+      <ion-col col-8  (click)="irParaPlaylist($event, playlist)">
+  
+      
+           <ion-thumbnail margin-right  float-left>
+            <img width="80" src="assets/imgs/noMusic.png" />
+          </ion-thumbnail>
+
+           <h2>{{playlist.nome}}</h2>
+    
+          <!--  <h2>{{qtdMusicas}} aa</h2> -->
+          
+            <!--  <p>{{qtdMusicas()}} músicas</p> -->
+            
+ 
+
+     </ion-col>
+
+
+     <ion-col col-4 class="iconsMore">
+       <ion-icon  name="play" (click)="tocarPlaylist(playlist)" ></ion-icon>
+       <ion-icon  name="create" (click)="editar(playlist.post_uid, playlist.nome)"></ion-icon>
+     </ion-col>
+  
+     </ion-row>
+
+
+
+    </ion-item>
+  </ion-list>
+
+
+
+</ion-content>

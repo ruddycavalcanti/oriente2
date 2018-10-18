@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{post_name}}</ion-title>
+
+   <ion-buttons end   *ngIf="can_edit" margin-right>
+    <button ion-button  icon-only (click)="irParaEdit()">
+    <ion-icon name="create"></ion-icon>
+    </button>
+    </ion-buttons>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content  >
+
+    
+
+
+    <ion-row>
+
+            <ion-col>
+        
+             
+        
+                <div class="mainInfo">
+                    <p class="nome">{{post_name}}</p>
+
+                    <p>{{post_content}}</p>
+
+                    <p>Url da Musica: {{musica_url}}</p>
+                </div>
+        
+            </ion-col>
+        
+    </ion-row>
+        
+
+
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Notícias</ion-title>
+
+    <ion-buttons end margin-right >
+    <button ion-button  icon-only (tap)="irParaAdd()" *ngIf="is_admin" >
+    <ion-icon name="add"></ion-icon>
+    </button>
+    </ion-buttons>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="category" >
+
+        <ion-list >
+        <ion-card  text-wrap   *ngFor="let post of posts  | async" (click)="irParaSingle($event, post)">
+
+            <ion-item>
+                <h2>{{post.post_name}}</h2>
+                <p class="data">{{post.post_date}}</p>
+            </ion-item>
+            
+            <img [src]="post.post_image ? post.post_image : 'assets/imgs/noImage.png'" width="70"/>
+            
+            <ion-card-content>
+                <p>{{post.post_description}}</p>
+            </ion-card-content>
+             <!--<ion-row>
+                <ion-col>
+                <button ion-button icon-left clear small>
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    <div>12 Likes</div>
+                </button>
+                </ion-col>
+                <ion-col>
+                <button ion-button icon-left clear small>
+                    <ion-icon name="text"></ion-icon>
+                    <div>4 Comments</div>
+                </button>
+                </ion-col>
+                <ion-col center text-center>
+                <ion-note>
+                    11h ago
+                </ion-note>
+                </ion-col>
+            </ion-row> -->
+            
+            </ion-card>
+</ion-list>
+
+         
+
+
+</ion-content>

@@ -1,0 +1,248 @@
+page-home {
+
+   
+  .bar-buttons button{
+        color: #fff;
+    }
+
+  
+
+    .scroll-content {
+        padding-top: 0 !important;
+    }
+
+
+    .swiper-pagination-bullet-active {
+        background-color: #fff !important;
+        border: none;
+    }
+
+    .swiper-pagination-bullet {
+        background-color: transparent;
+        border: 1px solid white !important;
+        width: 8px;
+        height: 8px;
+        opacity: 1;
+    }
+
+}
+
+
+.btnAddNovoHome { 
+    margin-left:60px;
+}
+
+.btnEditDestaque, .btnAddNovoHome {
+    z-index:99999 !important;
+    position: absolute;
+    bottom:40px;
+}
+
+
+h1,h2,h3,h4,h5,h6 { font-family: PoppinsBold; }
+
+
+.menu-enabled button:hover {
+    background-color:#eee;
+}
+
+
+
+
+.destaqueImg { margin:0 auto;}
+
+
+.capaHome { 
+background-position-x: 50%;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center fixed;
+z-index:1;
+}
+
+.capaHome .capaHomeContainer {
+width:100%; height:800px;
+background-color: rgba(0, 0, 0, .4);
+z-index:2;
+}
+
+.detalhes{
+position: absolute;
+z-index: 9999;
+bottom:40px;
+left:20px;
+color:#fff;
+}
+.detalhes h2{
+text-transform: uppercase;
+font-size:2em;
+line-height: 1px;
+}
+.detalhes p {
+font-size: 1.6em;
+}
+
+.logo { display:block;  width:80px; margin:0 auto;}
+
+
+.primaryColor { color:#000;}
+
+
+
+.circle  { border-radius:50%; }
+.bold { font-family: PoppinsBold;}
+
+
+.perfil { width:90px; height:90px; margin:0 auto; }
+
+
+
+
+.avatarPerfil img {
+border:5px solid #ededed;    
+margin:20px 0 0 15px;
+background-color:#ededed;
+}
+
+
+.profileBackground { 
+background:#fff url('../assets/imgs/profileBackground.png') no-repeat top center;
+color:#fff;
+height: 200px;
+}
+
+
+.mainInfo { color:#777; margin-left:20px; }
+
+.mainInfo .nome {   font-family: PoppinsBold; font-size:1.1em; }
+
+.date{  color:#777}
+.desc {  color:#777; } 
+
+.conteudo  {
+white-space: pre-wrap;
+}
+
+.editarPerfilBtn { margin:10px 10px 0 0; float: right;}
+
+
+
+.loginRegister  p,
+.loginRegister h3{ color:#fff}
+
+.loginRegister  .item-md { background: transparent; color:#fff;}
+
+
+.loginRegister {
+background:#333 url('../assets/imgs/background-login-page.jpg') no-repeat top center;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+background-size: cover;
+color:#fff;
+
+}
+
+.loginRegister  .gBtn { 
+background-color:#d34836; 
+   background-image: url('../assets/imgs/icons/googleBtn.png');
+background-repeat: no-repeat;
+background-position: 10px 8px; 
+text-transform: capitalize;
+font-size:.9em; 
+padding:2rem 2rem 2rem 4rem;
+width:200px;
+
+}
+
+.loginRegister .fbBtn {
+background-color:#3b5998;
+background-image: url('../assets/imgs/icons/facebookBtn.png');
+background-repeat: no-repeat;
+background-position: 5px 8px; 
+text-transform: capitalize;
+font-size:.9em;
+padding:2rem 2rem 2rem 4rem;
+width:200px;
+}
+
+
+
+.loginRegister .loginRegisterBtn { 
+padding:25px 0;  
+font-size:1.2em;
+text-transform: uppercase; 
+font-family:PoppinsBold; 
+}
+
+
+.loginRegister form ion-icon { margin-right:10px; }
+
+//eventos
+
+.show { background:#efefef;  color:#aaa;}
+.show ion-item { background:#efefef}
+.show .diaSingle { line-height: 1px; font-size:2.6em; margin-top:50px; font-family: PoppinsBold;  color:#aaa;}
+.show .maisDetalhes { background:#fff; font-size:1em;  color:#aaa;
+border-bottom-left-radius:20px;  border-top-left-radius:20px;  }
+.show h2 { font-size:1.5em; }
+.show .dia { font-size:2.6em; font-family: PoppinsBold;  color:#aaa; line-height: 1.4em; }
+.show .mes { font-size:1.4em; text-transform: uppercase;  color:#aaa; }
+.show .hora { font-size:1.1em; margin-top:5px;  color:#aaa;}
+.show .detalheSpace { margin-top:0px; margin-left:0px;}
+
+.show .cat_seta  { font-size:2.4em;}
+
+
+.category .cat_seta  { font-size:2.4em;}
+
+.category .data { font-size:.8em;}
+
+.addEdit ion-select { margin-top:0px;}
+
+textarea { min-height: 120px;}
+
+.tirarFoto { margin:10px auto;width:120px;display:block;}
+
+
+.cat_playlists ion-icon { padding:20px;  }
+
+.iconsMore  { font-size:.8em;}
+.iconsMore ion-icon { margin-top:20px; padding:0;}
+
+.descCategory { height:53px; }
+
+
+.app-root .footer-md::before {
+   top:0; height:0;
+}
+
+.playerGlobal {
+    
+     position: absolute;
+      z-index:999;  bottom: 0;
+    }
+
+
+ .playerGlobal .esconderBotao {
+        position: relative;
+        top:-51px;
+        right:1px;
+        font-size:4em;
+    }
+    .playerGlobal .exibirBotao {
+        position: relative;
+        top:-10px;
+        right:10px;
+        font-size:4em;
+    }
+
+    .playerGlobal   .playerGlobalCont {
+        background:#000;
+        height:180px;
+        color:#fff
+    }
+
+        .playerGlobal ion-grid {
+
+            font-size:1.4em;
+        }

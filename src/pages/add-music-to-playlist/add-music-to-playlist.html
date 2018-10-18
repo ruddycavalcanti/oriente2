@@ -1,0 +1,52 @@
+
+<ion-header>
+    <ion-navbar color="dark">
+        
+
+    <ion-title>Adicionar à Playlist</ion-title>
+
+  <ion-buttons end margin-right>
+      <button ion-button  icon-only (click)="salvarMusicToPlaylist()">
+      <ion-icon name="checkmark"></ion-icon>
+      </button>
+      </ion-buttons>
+
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+
+
+  <div text-center>
+
+    <p (click)="addPlaylist()"><ion-icon name="add-circle"></ion-icon> Criar nova playlist</p>
+  </div>
+
+
+ <ion-list radio-group [(ngModel)]="playlistSelecionada">
+    <ion-item *ngFor="let playlist of playlists | async">
+
+  
+
+       <ion-thumbnail item-start>
+        <img width="80" src="{{imagemPlaylist}}" />
+      </ion-thumbnail>
+
+      <div item-start>
+        <h2>{{playlist.nome}}</h2>
+        <!--<p>{{playlist.qtdMusicas}} músicas </p>-->
+     </div>
+
+     <ion-radio  item-end value="{{playlist.post_uid}}" ></ion-radio>
+      
+
+    </ion-item>
+  </ion-list>
+
+
+
+
+</ion-content>

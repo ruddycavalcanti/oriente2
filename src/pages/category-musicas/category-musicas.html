@@ -1,0 +1,101 @@
+<ion-header>
+    <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Músicas</ion-title>
+
+    <ion-buttons end margin-right >
+        <button ion-button  icon-only (click)="irParaAdd()">
+        <ion-icon name="add"></ion-icon>
+        </button>
+        </ion-buttons>
+
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+
+
+
+
+        <ion-list>
+
+            <ion-item   text-wrap   *ngFor="let post of posts  | async; let i=index;" >
+
+
+                <ion-row>
+                    <ion-col col-10 (click)="play(post)">
+                       
+                       <!-- <ion-thumbnail margin-right  float-left >
+                            <img width="80" src="assets/imgs/noMusic.png" />
+                        </ion-thumbnail>-->
+                
+        
+                        <h2>{{i+1}}. {{post.post_name}} </h2>
+                        <p>{{post.post_artista}}</p>
+
+                    </ion-col>
+
+
+                    <ion-col col-2>
+                            <button clear ion-button icon-only (click)="abreAddMusicToPlaylist(post)" item-end>
+                                 
+                                    <ion-icon color="grey" name="heart" isActive="true"></ion-icon>
+                                  </button>
+                    </ion-col>
+
+            </ion-row>
+          </ion-item>
+
+     
+      </ion-list>
+
+
+      <!--
+      <h4 padding margin-top>MÚSICAS DO SPOTIFY</h4>
+
+
+      <ion-list>
+            <ion-item   text-wrap   *ngFor="let playlist of playlists  | async; let i = index;" (click)="playSpotify(playlist)">
+                    
+                <ion-row >
+               <ion-col col-3>
+                    <ion-thumbnail item-start  >
+
+                            <img [src]="playlist.album.images[2].url" width="64">
+                        </ion-thumbnail>
+            
+        
+                    </ion-col>
+    
+    
+                    <ion-col col-7>
+                        <h2>{{playlist.name}}</h2>
+                        
+                        <p>Popularidade: {{playlist.popularity}}</p>
+    
+          
+                      </ion-col>
+    
+    
+                      <ion-col col-2>
+                          <p margin-top class="cat_seta">
+                              <ion-icon color="primary" ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
+                          </p>
+            
+                        </ion-col>
+    
+              </ion-row>
+    
+          
+          </ion-item>
+    
+          
+         
+          </ion-list>
+        -->
+
+
+</ion-content>

@@ -1,0 +1,13 @@
+{
+  "name": "ionicStarter v01",
+  "short_name": "IonicStarter",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "assets/imgs/logo_blue.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#498aff",
+  "theme_color": "#498aff"
+}

@@ -1,0 +1,91 @@
+<ion-menu [content]="content">
+
+    <ion-header >
+
+      <ion-toolbar  color="dark">
+
+
+       <div text-center>
+          <p  >
+              <img src="assets/imgs/logo.png" width="80"></p>
+
+          <p ></p>
+       </div> 
+
+      </ion-toolbar>
+
+    </ion-header>
+
+
+    <ion-navbar color="dark"></ion-navbar>
+    <ion-content>
+      <ion-list no-lines>
+        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+          {{p.title}}
+          <ion-icon [name]="p.icon" item-left></ion-icon>
+        </button>
+      </ion-list>
+    </ion-content>
+ 
+  </ion-menu>
+  
+  <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+
+
+  <ion-footer  class="playerGlobal">
+   
+      <ion-icon  *ngIf="habilitarPlayer"  float-right (click)="habilitarPlayer = !habilitarPlayer" class='esconderBotao' name="arrow-dropdown-circle"></ion-icon>
+      <ion-icon   *ngIf="!habilitarPlayer"  (click)="habilitarPlayer = !habilitarPlayer" float-right class='exibirBotao' name="arrow-dropup-circle"></ion-icon>
+
+     <div padding class="playerGlobalCont" *ngIf="habilitarPlayer">
+
+     <p>{{musica_nome}} <span *ngIf="musica_artista">- {{musica_artista}}</span></p>
+
+
+			<div class="tempo" *ngIf="mediaTimer!='0'">
+				<span float-left>{{mediaTimer}}</span>
+
+				<span float-right>{{duracao}}</span>
+			  </div>
+		
+	
+			  <div  class="tempoDrag" >
+			  <ion-range [(ngModel)]="mediaTimer">  </ion-range>
+			</div>
+
+      <ion-grid>
+				<ion-row>
+				  <ion-col>
+				 <ion-icon  *ngIf="botaoRefresh"  margin-right  name='refresh' (click)="refresh()"></ion-icon>
+		
+					   <ion-icon *ngIf="botaoRepeat"  margin-right   name='repeat' (click)="repeat()"></ion-icon>
+		
+									<ion-icon  *ngIf="botaoShuffle"  margin-right  name='shuffle' (click)="shuffle()"></ion-icon>
+				   </ion-col>
+		
+				  <ion-col>
+							<ion-icon margin-right name='ios-skip-backward' (click)="anterior()"></ion-icon>
+				  </ion-col>
+		
+				  <ion-col>
+				  	<ion-icon  *ngIf="botaoPause" margin-right name='pause' (click)="pausarMusica()"></ion-icon>
+		
+							<ion-icon *ngIf="botaoPlay"  margin-right name='play' (click)="tocarMusica()"></ion-icon>
+				  </ion-col>
+		
+				  <ion-col>
+							<ion-icon margin-right name='ios-skip-forward' (click)="proximo()"></ion-icon>
+				  </ion-col>
+		
+				  <ion-col>
+							<ion-icon   name='heart' (click)="share()"></ion-icon>
+				  </ion-col>
+		
+				</ion-row>
+        </ion-grid>
+        
+      </div> 
+		  
+   
+  </ion-footer>

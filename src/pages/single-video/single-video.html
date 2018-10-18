@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{post_name}}</ion-title>
+
+   <ion-buttons end  *ngIf="is_admin"  margin-right>
+    <button ion-button  icon-only (click)="irParaEdit()">
+    <ion-icon name="create"></ion-icon>
+    </button>
+    </ion-buttons>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content  >
+
+
+
+    <ion-row >
+
+            <ion-col>
+                <div text-center>
+                     <iframe width="100%" height="250" [src]="videoUrl" frameborder="0" allowfullscreen></iframe>
+
+                    
+                </div>
+
+                <div class="mainInfo">
+                    <h1 class="nome">{{post_name}}</h1>
+                    
+                    <p>{{post_description}}</p>
+
+                </div>
+        
+            </ion-col>
+        
+    </ion-row>
+
+  
+    <ion-row padding>
+
+            <ion-col>
+        
+               
+              <p class="conteudo">{{post_content}}</p>
+        
+            </ion-col>
+        
+    </ion-row>
+
+
+
+</ion-content>

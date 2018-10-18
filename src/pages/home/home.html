@@ -1,0 +1,57 @@
+<ion-header no-border>
+    <ion-navbar >
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title></ion-title>
+
+      <ion-buttons end margin-right > 
+          <button ion-button  icon-only (click)="irParaPerfil()">
+          <ion-icon name="person"></ion-icon>
+          </button>
+          </ion-buttons>
+
+    </ion-navbar> 
+  </ion-header> 
+ 
+<ion-content class="slidehome" fullscreen>
+   
+  
+    <ion-fab (tap)="irParaNew()" left  class="btnAddNovoHome">
+        <button ion-fab mini color="dark" ><ion-icon name="add"></ion-icon></button>
+     </ion-fab>
+ 
+ 
+
+  <ion-slides  pager (ionSlideDidChange)="slideChanged()">
+  
+     
+        <ion-slide  *ngFor="let post of posts  | async" (click)="irParaDestaque(post.actionValue,post.action )" >
+ 
+
+             <ion-fab (tap)="irParaEdit(post)" left  margin-right class="btnEditDestaque">
+                <button ion-fab mini color="dark" ><ion-icon name="create"></ion-icon></button>
+             </ion-fab>
+
+
+          <div  [style.backgroundImage]="'url('+ post.post_image +')'" class="capaHome">
+
+            <div  class="capaHomeContainer"></div>
+
+          </div>
+ 
+            <div class="detalhes" text-left>
+             
+              <h2 *ngIf="post.titulo">{{post.titulo}} </h2>
+               <p  *ngIf="post.desc">{{post.desc}} </p>
+          </div>
+ 
+
+            
+    </ion-slide>
+
+  </ion-slides>
+
+
+
+</ion-content>
